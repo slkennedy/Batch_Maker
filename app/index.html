@@ -19,6 +19,8 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <!--icon fonts-->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -26,18 +28,20 @@
         <![endif]-->
         <script type="text/x-handlebars">
             <header class="header">
-                <span>The kitchen is yours, chef!</span>
-                <h1>{{#link-to 'index'}}Batch Maker{{/link-to}}</h1>
-                <ul>
-                    <li>{{#link-to 'recipes.create'}}+{{/link-to}}</li>
-                    <li>*</li>
-                    <li>%</li>
-                </ul>
+                <div class="head-wrapper">
+                    <span>The kitchen is yours, chef!</span>
+                    <h1>{{#link-to 'index'}}Batch Maker{{/link-to}}</h1>
+                    <ul>
+                        <li>{{#link-to 'recipes.create'}}<i class="fa fa-plus"></i>{{/link-to}}</li>
+                        <li>{{#link-to 'settings'}}<i class="fa fa-cog"></i>{{/link-to}}</li>
+                        <li><i class="fa fa-users"></i></li>
+                    </ul>
+                </div>
             </header>
             <div class="wrapper">
                 <aside class="sidebar">
                     <ul class="menu-list">
-                        <li>My Recipes</li>
+                        <li>{{#link-to 'recipes'}}My Recipes{{/link-to}}</li>
                         <li>Public Recipes</li>
                         <li>Popular Recipes</li> 
                         <li>My Favorite Recipes</li>
@@ -50,40 +54,68 @@
             </div>
         </script>
 
-        <script type='text/x-handlebars' data-template-name='user'>
-            <h1>Hey {{username}}</h1>
+        <script type='text/x-handlebars' data-template-name='recipes'>
+            <img src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+            <img src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+            <img src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
         </script>
 
         <script type='text/x-handlebars' data-template-name='create'>
             <h2>Basic Info</h2>
-            //horizontal line
-            <img src= 'http://lorempixel.com/output/food-q-c-300-300-10.jpg' />
+            <hr>
+            <img src= 'http://lorempixel.com/output/food-q-c-150-150-10.jpg' />
             <input type='text' name='recipe_name' value='Recipe Name'>
             <input type='text' name='recipe_author' value='By'>
-            //Checkboxs for Public vs. Private
-            //Dropdown for recipe type
+            <input type='radio' name='private_status' value=false>Make it Public</input>
+            <input type='radio' name='private_status' value=true>Keep it Private</input>
+
+            <select name="recipe_type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+            </select>
+
+
             <input type='text' name='prep_time' value='Prep Time'>
             <input type='text' name='cook_time' value='Cook Time'>
             <input type='text' name='cook_temp' value='Cook Temp'>
-            //dropdown for temperature type (F or C)
+            <select name="recipe_type">
+                <option value="farenheit">Farenheit</option>
+                <option value="celsius">Celsius</option>
+            </select>            
             <input type='text' name='yield_amount' value='Amount'>
             <input type='text' name='yield_type' value='cookies, loaves, etc'>
 
             <h2>Step 1</h2>
-            //horizontal line
+            <hr>
             <input type='text' name='measurement' value='Amount'>
-            //drop down of measurement units (cups, tsps, oz)
+            <select name="recipe_type">
+                <option value="cups">Cups</option>
+                <option value="grams">Grams</option>
+                <option value="tbsp">Tablespoons</option>
+                <option value="oz">Ounces</option>
+            </select>
             <input type='text' name='ingredient' value='Ingredient'>
-            //Delete or Add button
+            <!--//Delete or Add button-->
             <textarea name='step_directions'>What directions go with this step?</textarea>
-            //button (Add another step) submits current step and generates new form for new step
+            <input type="submit" name="Add another step" />
+
+            <!--//button (Add another step) submits current step and generates new form for new step-->
             <h2>Personal Notes</h2>
-            //horizontal line
+            <hr>
             <textarea name='personal_notes'></textarea>
-            //button (Save this recipe!) saves recipe to server and loads main index
+            <input type="submit" name="Save this recipe!" />
+            <!--//button (Save this recipe!) saves recipe to server and loads main index-->
         </script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script type='text/x-handlebars' data-template-name='settings'>
+            <h2>Account Settings</h2>
+            <input type='text' name='username' value='Username' />
+            <input type='text' name='first_name' value='First Name'>
+            <input type='text' name='last_name' value='Last Name'>
+            <input type="submit" name="Submit" />
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

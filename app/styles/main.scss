@@ -15,79 +15,100 @@ body {
 
 }
 
-.header{
-    width: 100%;
+
+
+header{
     background-color: $header-grey;
-    position:relative;
     height: 4em;
+    width: 100%;
 
     span, 
     ul,
     li,
-    h1 {
-        display:inline;
+    h1,
+    a {
+        display:inline-block;
         outline: 1px blue solid;
+        color: $primary-fontcolor;
     }
 
     h1 {
         font-size: 2.5em;
         text-transform: uppercase;
-        width: 100%;
-        position:absolute;
+        width: 33%;
+        margin:0;
         text-align: center;
-        right:0;
-        top:0;
-        left:0;
+        padding-top: 5px;
 
     }
 
     ul {
-        position: absolute;
-        right:0;
+        width: 33%;
+        text-align: right;
 
         li {
-            width: 100%;
-            font-size: 1.5em;
+            font-size: 2em;
+            margin: 0 10px;
         }
     }
 
     span {
         font-size: 1.5em;
-        position:absolute;
-        left: 0;
+        width: 33%;
+        height: 100%;
     }
 }
+
+
+
+
+
 
 .wrapper {
     width: 100%;
+    margin:0;
+    padding:0;
 }
 
+aside {
+    float:left;
+    width: 10%;
+    background-color:$sidebar-grey;
+    min-height: 800px;
+    margin-bottom: 5px;
+
+    li,
+    a {
+        color: $primary-fontcolor;
+    }
+
+}
 .menu-list {
     list-style: none;
-    float:left;
-    background-color:$sidebar-grey;
     padding-top:50px;
     margin-left: 0;
     padding-left: 0;
-    padding-bottom: 80%;
 
     li {
-        margin-top: 15px;
+        margin: 15px auto;
+        padding-bottom: 15px;
         border-bottom: 1px solid $primary-fontcolor;
         text-align: center;
-        width: 60%;
+        width: 50%;
         font-size: 1.5em;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 15px;
     }
 }
+
+
+
 
 .content {
     outline: 1px red solid;
     width: 80%;
-    padding-bottom: 100%;
-    margin-top: 1%;
-    margin-left: 13%;
-    z-index: 10;
+    margin: 0 auto;
 }
+
+
+
+
+
