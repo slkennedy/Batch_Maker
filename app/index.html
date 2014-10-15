@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Batch_Maker</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script type="text/x-handlebars">
+            <header class="header">
+                <span>The kitchen is yours, chef!</span>
+                <h1>{{#link-to 'index'}}Batch Maker{{/link-to}}</h1>
+                <ul>
+                    <li>{{#link-to 'recipes.create'}}+{{/link-to}}</li>
+                    <li>*</li>
+                    <li>%</li>
+                </ul>
+            </header>
+            <div class="wrapper">
+                <aside class="sidebar">
+                    <ul class="menu-list">
+                        <li>My Recipes</li>
+                        <li>Public Recipes</li>
+                        <li>Popular Recipes</li> 
+                        <li>My Favorite Recipes</li>
+                        <li>My Pantry</li>
+                    </ul>
+                </aside>
+                <section class="content">
+                    {{outlet}}
+                </section>
+            </div>
+        </script>
+
+        <script type='text/x-handlebars' data-template-name='user'>
+            <h1>Hey {{username}}</h1>
+        </script>
+
+        <script type='text/x-handlebars' data-template-name='create'>
+            <h2>Basic Info</h2>
+            //horizontal line
+            <img src= 'http://lorempixel.com/output/food-q-c-300-300-10.jpg' />
+            <input type='text' name='recipe_name' value='Recipe Name'>
+            <input type='text' name='recipe_author' value='By'>
+            //Checkboxs for Public vs. Private
+            //Dropdown for recipe type
+            <input type='text' name='prep_time' value='Prep Time'>
+            <input type='text' name='cook_time' value='Cook Time'>
+            <input type='text' name='cook_temp' value='Cook Temp'>
+            //dropdown for temperature type (F or C)
+            <input type='text' name='yield_amount' value='Amount'>
+            <input type='text' name='yield_type' value='cookies, loaves, etc'>
+
+            <h2>Step 1</h2>
+            //horizontal line
+            <input type='text' name='measurement' value='Amount'>
+            //drop down of measurement units (cups, tsps, oz)
+            <input type='text' name='ingredient' value='Ingredient'>
+            //Delete or Add button
+            <textarea name='step_directions'>What directions go with this step?</textarea>
+            //button (Add another step) submits current step and generates new form for new step
+            <h2>Personal Notes</h2>
+            //horizontal line
+            <textarea name='personal_notes'></textarea>
+            //button (Save this recipe!) saves recipe to server and loads main index
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/ember/ember.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/application.js"></script>
+        <script src="scripts/router.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
