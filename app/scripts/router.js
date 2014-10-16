@@ -7,7 +7,7 @@ App.Router.map (function(){
 
 	this.resource('recipes', function(){
 		this.route('create');
-	// 	this.route('show', {path: ':recipe_id'});
+	 	this.route('detail' /*,{path: ':recipe_id'}*/);
 	// 	this.route('edit', {path: ':recipe_id/edit'});
 	});
 
@@ -19,6 +19,12 @@ App.Router.map (function(){
 });
 
 App.UserRoute = Ember.Route.extend ({
+	model: function (){
+		return {username: 'Sara K'};
+	}
+});
+
+App.RecipesCreateRoute = Ember.Route.extend ({
 	model: function (){
 		return {username: 'Sara K'};
 	}

@@ -7,6 +7,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $primary-fontcolor: #6C6C6C;
 $header-grey: #D0D0D0;
 $sidebar-grey: #E6E6E6;
+$light-background: HSLA(0, 0%, 95%, 1);
 @font-family-serif;
 
 
@@ -15,11 +16,14 @@ body {
 
 }
 
+h2 {
+    margin-top: 0;
+}
 
 
 header{
-    background-color: $header-grey;
-    height: 4em;
+    background-color: $light-background;
+    height: 150px;
     width: 100%;
 
     span, 
@@ -28,23 +32,20 @@ header{
     h1,
     a {
         display:inline-block;
-        outline: 1px blue solid;
         color: $primary-fontcolor;
     }
 
-    h1 {
-        font-size: 2.5em;
-        text-transform: uppercase;
-        width: 33%;
-        margin:0;
-        text-align: center;
-        padding-top: 5px;
+    .logo {
+        height: 100px;
+        padding-top: 10px;
 
     }
 
     ul {
         width: 33%;
         text-align: right;
+        margin:0;
+        padding-right: 10px;
 
         li {
             font-size: 2em;
@@ -56,9 +57,9 @@ header{
         font-size: 1.5em;
         width: 33%;
         height: 100%;
+        padding-left: 15px;
     }
 }
-
 
 
 
@@ -72,10 +73,11 @@ header{
 
 aside {
     float:left;
-    width: 10%;
-    background-color:$sidebar-grey;
+    width: 15%;
+    background-color:$header-grey;
     min-height: 800px;
     margin-bottom: 5px;
+    margin-top: 0;
 
     li,
     a {
@@ -100,15 +102,42 @@ aside {
 }
 
 
-
-
 .content {
     outline: 1px red solid;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
+    padding: 60px 10px;
+
+
 }
 
+.small-food {
+    margin: 10px 11px 20px;
 
+}
+
+.image-row {
+    margin-bottom:10px;    
+}
+
+.small-food-header {
+    font-size: 1.5em;
+    color: HSLA(111, 44%, 57%, 1);
+    
+}
+
+.small-food-line {
+    color: $header-grey;
+    display:inline-block;
+
+}
+
+.small-food-div-line {
+    border-top: 3px solid $header-grey;
+    margin: 0 auto;
+    display:inline-block;
+
+}
 
 
 

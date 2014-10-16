@@ -15,7 +15,6 @@
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
@@ -30,11 +29,11 @@
             <header class="header">
                 <div class="head-wrapper">
                     <span>The kitchen is yours, chef!</span>
-                    <h1>{{#link-to 'index'}}Batch Maker{{/link-to}}</h1>
+                    <h1>{{#link-to 'index'}}<img class="logo" src="images/BM_Logo_Sara.png" />{{/link-to}}</h1>
                     <ul>
-                        <li>{{#link-to 'recipes.create'}}<i class="fa fa-plus"></i>{{/link-to}}</li>
-                        <li>{{#link-to 'settings'}}<i class="fa fa-cog"></i>{{/link-to}}</li>
-                        <li><i class="fa fa-users"></i></li>
+                        <li>{{#link-to 'recipes.create'}}<span class="fa fa-plus"></span>{{/link-to}}</li>
+                        <li>{{#link-to 'settings'}}<span class="fa fa-cog"></span>{{/link-to}}</li>
+                        <li><span class="fa fa-user"></span></li>
                     </ul>
                 </div>
             </header>
@@ -54,57 +53,110 @@
             </div>
         </script>
 
-        <script type='text/x-handlebars' data-template-name='recipes'>
-            <img src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-            <img src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-            <img src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+        <script type='text/x-handlebars' data-template-name='recipes/index'>
+            <section class  ="image-row">
+                <h2 class="small-food-header">My Recipes</h2>
+                <hr class="small-food-line">
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            </section>
+            <section class  ="image-row">
+                <h2 class="small-food-header">Public Recipes</h2>
+                <div class="small-food-div-line"></div>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            </section>
+            <section class  ="image-row"> 
+                <h2 class="small-food-header">Popular Recipes</h2>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            </section>
+            <section class  ="image-row"> 
+                <h2 class="small-food-header">My Favorite Recipes</h2>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            </section>
+            <section class  ="image-row"> 
+                <h2 class="small-food-header">My Pantry</h2>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
+                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            </section>
+
         </script>
 
-        <script type='text/x-handlebars' data-template-name='create'>
+        <script type='text/x-handlebars' data-template-name='recipes/create'>
             <h2>Basic Info</h2>
             <hr>
             <img src= 'http://lorempixel.com/output/food-q-c-150-150-10.jpg' />
-            <input type='text' name='recipe_name' value='Recipe Name'>
-            <input type='text' name='recipe_author' value='By'>
-            <input type='radio' name='private_status' value=false>Make it Public</input>
-            <input type='radio' name='private_status' value=true>Keep it Private</input>
 
-            <select name="recipe_type">
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="dessert">Dessert</option>
-            </select>
+            {{input type='text' value=recipe_name placeholder='Recipe Name'}}
 
 
-            <input type='text' name='prep_time' value='Prep Time'>
-            <input type='text' name='cook_time' value='Cook Time'>
-            <input type='text' name='cook_temp' value='Cook Temp'>
+            {{input type='text' value=recipe_author placeholder='By'}}
+            // {{input type='radio' value='private_status' placeholder='Make it Public'}}
+            // <input type='radio' value='private_status' value=true>Keep it Private</input>
+
+            {{view Ember.Select 
+                optionLabelPath="Breakfast"
+                value=breakfast
+            }}
+
+
+            // <select name="recipe_type">
+            //     <option value="breakfast">Breakfast</option>
+            //     <option value="lunch">Lunch</option>
+            //     <option value="dinner">Dinner</option>
+            //     <option value="dessert">Dessert</option>
+            // </select>
+
+
+            {{input type='text' value=prep_time placeholder='Prep Time'}}
+            {{input type='text' value=cook_time placeholder='Cook Time'}}
+            {{input type='text' value=cook_temp placeholder='Cook Temp'}}
+
             <select name="recipe_type">
                 <option value="farenheit">Farenheit</option>
                 <option value="celsius">Celsius</option>
-            </select>            
-            <input type='text' name='yield_amount' value='Amount'>
-            <input type='text' name='yield_type' value='cookies, loaves, etc'>
+            </select>  
+
+            {{input type='text' value=yield_amount placeholder='Amount'}}
+            {{input type='text' value=yield_type placeholder='cookies, loaves, etc'}}
 
             <h2>Step 1</h2>
             <hr>
-            <input type='text' name='measurement' value='Amount'>
+            {{input type='text' value=measurement placeholder='Amount'}}
+
             <select name="recipe_type">
                 <option value="cups">Cups</option>
                 <option value="grams">Grams</option>
                 <option value="tbsp">Tablespoons</option>
                 <option value="oz">Ounces</option>
             </select>
-            <input type='text' name='ingredient' value='Ingredient'>
+
+            {{input type='text' value=ingredient placeholder='Ingredient'}}
             <!--//Delete or Add button-->
-            <textarea name='step_directions'>What directions go with this step?</textarea>
+            {{textarea value=step_directions placeholder='What directions go with this step?'}}
             <input type="submit" name="Add another step" />
 
             <!--//button (Add another step) submits current step and generates new form for new step-->
             <h2>Personal Notes</h2>
             <hr>
-            <textarea name='personal_notes'></textarea>
+            {{textarea value=personal_notes placeholder='Personal Notes'}}
             <input type="submit" name="Save this recipe!" />
             <!--//button (Save this recipe!) saves recipe to server and loads main index-->
         </script>
@@ -116,6 +168,8 @@
             <input type='text' name='last_name' value='Last Name'>
             <input type="submit" name="Submit" />
         </script>
+
+        <script type="text/x-handlebars"
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
