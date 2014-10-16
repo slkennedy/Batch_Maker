@@ -1,5 +1,9 @@
 window.App = Ember.Application.create();
 
+App.ApplicationAdapter = DS.FirebaseAdapter.extend ({
+	firebase: new Firebase ('https://batchmade.firebaseio.com/')
+});
+
 
 	App.User = DS.Model.extend ({
 		username: DS.attr('string'),

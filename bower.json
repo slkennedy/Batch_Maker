@@ -6,7 +6,9 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.11.0",
     "ember": "~1.7.0",
-    "ember-data": "1.0.0-beta.5"
+    "ember-data": "1.0.0-beta.5",
+    "firebase": "~1.1.2",
+    "emberfire": "~1.2.7"
   },
   "devDependencies": {}
 }

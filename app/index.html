@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js">
+<html class='no-js'>
     <head>
-        <meta charset="utf-8">
+        <meta charset='utf-8'>
         <title>Batch_Maker</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name='description' content=''>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css styles/vendor.css -->
@@ -13,33 +13,33 @@
         <!-- endbuild -->
 
         <!-- build:css styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel='stylesheet' href='styles/main.css'>
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src='bower_components/modernizr/modernizr.js'></script>
         <!-- endbuild -->
         <!--icon fonts-->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
     </head>
     <body>
         <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <script type="text/x-handlebars">
-            <header class="header">
-                <div class="head-wrapper">
+        <script type='text/x-handlebars'>
+            <header class='header'>
+                <div class='head-wrapper'>
                     <span>The kitchen is yours, chef!</span>
-                    <h1>{{#link-to 'recipes.index'}}<img class="logo" src="images/BM_Logo_Sara.png" />{{/link-to}}</h1>
+                    <h1>{{#link-to 'recipes.index'}}<img class='logo' src='images/BM_Logo_Sara.png' />{{/link-to}}</h1>
                     <ul>
-                        <li>{{#link-to 'recipes.create'}}<span class="fa fa-plus"></span>{{/link-to}}</li>
-                        <li>{{#link-to 'settings'}}<span class="fa fa-cog"></span>{{/link-to}}</li>
-                        <li><span class="fa fa-user"></span></li>
+                        <li>{{#link-to 'recipes.create'}}<span class='fa fa-plus'></span>{{/link-to}}</li>
+                        <li>{{#link-to 'settings'}}<span class='fa fa-cog'></span>{{/link-to}}</li>
+                        <li>{{#link-to 'login'}}<span class='fa fa-user'></span>{{/link-to}}</li>
                     </ul>
                 </div>
             </header>
-            <div class="wrapper">
-                <aside class="sidebar">
-                    <ul class="menu-list">
+            <div class='wrapper'>
+                <aside class='sidebar'>
+                    <ul class='menu-list'>
                         <li>{{#link-to 'recipes'}}My Recipes{{/link-to}}</li>
                         <li>Public Recipes</li>
                         <li>Popular Recipes</li> 
@@ -47,56 +47,56 @@
                         <li>My Pantry</li>
                     </ul>
                 </aside>
-                <section class="content">
+                <section class='content'>
                     {{outlet}}
                 </section>
             </div>
         </script>
 
         <script type='text/x-handlebars' data-template-name='recipes/index'>
-            <section class  ="image-row">
-                <h2 class="small-food-header">My Recipes</h2>
-                <hr class="small-food-line">
+            <section class  ='image-row'>
+                <h2 class='small-food-header'>My Recipes</h2>
+                <hr class='small-food-line'>
                 {{#link-to 'recipes.detail'}}
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-8.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-5.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-6.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-3.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-1.jpg'/>
                 {{/link-to}}
             </section>
-            <section class  ="image-row">
-                <h2 class="small-food-header">Public Recipes</h2>
-                <div class="small-food-div-line"></div>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            <section class  ='image-row'>
+                <h2 class='small-food-header'>Public Recipes</h2>
+                <div class='small-food-div-line'></div>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-8.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-5.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-6.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-3.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-1.jpg'/>
             </section>
-            <section class  ="image-row"> 
-                <h2 class="small-food-header">Popular Recipes</h2>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            <section class  ='image-row'> 
+                <h2 class='small-food-header'>Popular Recipes</h2>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-8.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-5.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-6.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-3.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-1.jpg'/>
             </section>
-            <section class  ="image-row"> 
-                <h2 class="small-food-header">My Favorite Recipes</h2>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            <section class  ='image-row'> 
+                <h2 class='small-food-header'>My Favorite Recipes</h2>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-8.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-5.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-6.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-3.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-1.jpg'/>
             </section>
-            <section class  ="image-row"> 
-                <h2 class="small-food-header">My Pantry</h2>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
-                <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+            <section class  ='image-row'> 
+                <h2 class='small-food-header'>My Pantry</h2>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-8.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-5.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-6.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-3.jpg'/>
+                <img class ='small-food' src='http://lorempixel.com/output/food-q-c-150-150-1.jpg'/>
             </section>
 
         </script>
@@ -105,74 +105,78 @@
             <h2>Basic Info</h2>
             <hr>
             <img src= 'http://lorempixel.com/output/food-q-c-150-150-10.jpg' />
-
-            {{input type='text' value=recipe_name placeholder='Recipe Name'}}
-
-
-            {{input type='text' value=recipe_author placeholder='By'}}
-            // {{input type='radio' value='private_status' placeholder='Make it Public'}}
-            // <input type='radio' value='private_status' value=true>Keep it Private</input>
-
-            {{view Ember.Select 
-                optionLabelPath="Breakfast"
-                value=breakfast
-            }}
+            <form>
+                {{input type='text' value=recipe_name placeholder='Recipe Name'}}
 
 
-            // <select name="recipe_type">
-            //     <option value="breakfast">Breakfast</option>
-            //     <option value="lunch">Lunch</option>
-            //     <option value="dinner">Dinner</option>
-            //     <option value="dessert">Dessert</option>
-            // </select>
+                {{input type='text' value=recipe_author placeholder='By'}}
+                // {{input type='radio' value='private_status' placeholder='Make it Public'}}
+                // <input type='radio' value='private_status' value=true>Keep it Private</input>
+
+                {{view Ember.Select 
+                    optionLabelPath='Breakfast'
+                    value=breakfast
+                }}
 
 
-            {{input type='text' value=prep_time placeholder='Prep Time'}}
-            {{input type='text' value=cook_time placeholder='Cook Time'}}
-            {{input type='text' value=cook_temp placeholder='Cook Temp'}}
+                // <select name='recipe_type'>
+                //     <option value='breakfast'>Breakfast</option>
+                //     <option value='lunch'>Lunch</option>
+                //     <option value='dinner'>Dinner</option>
+                //     <option value='dessert'>Dessert</option>
+                // </select>
 
-            <select name="recipe_type">
-                <option value="farenheit">Farenheit</option>
-                <option value="celsius">Celsius</option>
-            </select>  
 
-            {{input type='text' value=yield_amount placeholder='Amount'}}
-            {{input type='text' value=yield_type placeholder='cookies, loaves, etc'}}
+                {{input type='text' value=prep_time placeholder='Prep Time'}}
+                {{input type='text' value=cook_time placeholder='Cook Time'}}
+                {{input type='text' value=cook_temp placeholder='Cook Temp'}}
 
-            <h2>Step 1</h2>
-            <hr>
-            {{input type='text' value=measurement placeholder='Amount'}}
+                <select name='recipe_type'>
+                    <option value='farenheit'>Farenheit</option>
+                    <option value='celsius'>Celsius</option>
+                </select>  
 
-            <select name="recipe_type">
-                <option value="cups">Cups</option>
-                <option value="grams">Grams</option>
-                <option value="tbsp">Tablespoons</option>
-                <option value="oz">Ounces</option>
-            </select>
+                {{input type='text' value=yield_amount placeholder='Amount'}}
+                {{input type='text' value=yield_type placeholder='cookies, loaves, etc'}}
 
-            {{input type='text' value=ingredient placeholder='Ingredient'}}
-            <!--//Delete or Add button-->
-            {{textarea value=step_directions placeholder='What directions go with this step?'}}
-            <input type="submit" name="Add another step" />
+                <h2>Step 1</h2>
+                <hr>
+                {{input type='text' value=measurement placeholder='Amount'}}
 
-            <!--//button (Add another step) submits current step and generates new form for new step-->
-            <h2>Personal Notes</h2>
-            <hr>
-            {{textarea value=personal_notes placeholder='Personal Notes'}}
-            <input type="submit" name="Save this recipe!" />
-            <!--//button (Save this recipe!) saves recipe to server and loads main index-->
+                <select name='recipe_type'>
+                    <option value='cups'>Cups</option>
+                    <option value='grams'>Grams</option>
+                    <option value='tbsp'>Tablespoons</option>
+                    <option value='oz'>Ounces</option>
+                </select>
+
+                {{input type='text' value=ingredient placeholder='Ingredient'}}
+                <!--//Delete or Add button-->
+                {{textarea value=step_directions placeholder='What directions go with this step?'}}
+                <input type='submit' name='Add another step' />
+
+                <!--//button (Add another step) submits current step and generates new form for new step-->
+                <h2>Personal Notes</h2>
+                <hr>
+                {{textarea value=personal_notes placeholder='Personal Notes'}}
+                <input type='submit' name='Save this recipe!' />
+                <!--//button (Save this recipe!) saves recipe to server and loads main index-->
+            </form>
         </script>
 
         <script type='text/x-handlebars' data-template-name='settings'>
             <h2>Account Settings</h2>
-            <input type='text' name='username' value='Username' />
-            <input type='text' name='first_name' value='First Name'>
-            <input type='text' name='last_name' value='Last Name'>
-            <input type="submit" name="Submit" />
+            <form>
+                {{input type='text' value=username}}
+                {{input type='text' value=firstName}}
+                {{input type='text' value=lastName}}
+                {{input type='submit' value='Update'}}
+                {{input type='submit' value='Delete Account'}}
+            </form>
         </script>
 
         <script type='text/x-handlebars' data-template-name='recipes/detail'>
-            <div class="detail-wrapper">
+            <div class='detail-wrapper'>
                 <h2>{{title}}</h2>
                 <h3>{{author}}</h3>
                 <img {{bind-attr src=image}}>
@@ -198,34 +202,55 @@
 
         </script>
 
+        <script type='text/x-handlebars' data-template-name='login'>
+            <h1 class='login'>Login</h1>
+            <form>
+                {{input type='text' value=username placeholder='Username'}}
+                {{input type='password' value=password placeholder='Password'}}
+                {{input type='submit' value='Login'}}
+                {{#link-to 'signup'}}<h3>Create an Account</h3>{{/link-to}}
+            </form>    
+        </script>
+        <script type='text/x-handlebars' data-template-name='signup'>
+            <h1 class='signup'>Create an Account</h1>
+            <form>
+                {{input type='text' value=username placeholder='Username'}}
+                {{input type='password' value=password placeholder='Password'}}
+                {{input type='text' value=firstName placeholder='First Name'}}
+                {{input type='text' value=lastName placeholder='Last Name'}}
+                {{input type='submit' value='Create Account'}}
+            </form>
+        </script>
+
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/handlebars/handlebars.js"></script>
-        <script src="bower_components/ember/ember.js"></script>
-        <script src="bower_components/ember-data/ember-data.js"></script>
-
+        <script src='bower_components/jquery/dist/jquery.js'></script>
+        <script src='bower_components/handlebars/handlebars.js'></script>
+        <script src='bower_components/ember/ember.js'></script>
+        <script src='bower_components/ember-data/ember-data.js'></script>
+        <script src='bower_components/firebase/firebase.js'></script>
+        <script src='bower_components/emberfire/dist/emberfire.min.js'></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js'></script>
+        <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js'></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/application.js"></script>
-        <script src="scripts/router.js"></script>
+        <script src='scripts/application.js'></script>
+        <script src='scripts/router.js'></script>
         <!-- endbuild -->
 </body>
 </html>

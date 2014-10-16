@@ -11,8 +11,8 @@ App.Router.map (function(){
 	// 	this.route('edit', {path: ':recipe_id/edit'});
 	});
 
-	// this.route('login');
-	// this.route('signup');
+	this.route('login');
+	this.route('signup');
 
 	this.route('settings');
 	// this.route('pantry');
@@ -30,7 +30,7 @@ App.RecipesDetailRoute = Ember.Route.extend ({
 			title: 'Recipe Title',
 			id:1,
 			author: 'Some Person',
-			image: "http://lorempixel.com/output/food-q-c-800-300-9.jpg",
+			image: 'http://lorempixel.com/output/food-q-c-800-300-9.jpg',
 			type: 'Dessert',
 			prepTime: 15,
 			cookTime: 20,
