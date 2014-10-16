@@ -7,7 +7,7 @@ App.Router.map (function(){
 
 	this.resource('recipes', function(){
 		this.route('create');
-	 	this.route('detail' /*,{path: ':recipe_id'}*/);
+	 	this.route('detail'/*,{path: ':recipe_id'}*/);
 	// 	this.route('edit', {path: ':recipe_id/edit'});
 	});
 
@@ -24,8 +24,17 @@ App.UserRoute = Ember.Route.extend ({
 	}
 });
 
-App.RecipesCreateRoute = Ember.Route.extend ({
+App.RecipesDetailRoute = Ember.Route.extend ({
 	model: function (){
-		return {username: 'Sara K'};
+		return {
+			title: 'Recipe Title',
+			id:1,
+			author: 'Some Person',
+			image: "http://lorempixel.com/output/food-q-c-800-300-9.jpg",
+			type: 'Dessert',
+			prepTime: 15,
+			cookTime: 20,
+			cookTemp: 350
+		};
 	}
 });

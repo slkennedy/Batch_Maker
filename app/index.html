@@ -29,7 +29,7 @@
             <header class="header">
                 <div class="head-wrapper">
                     <span>The kitchen is yours, chef!</span>
-                    <h1>{{#link-to 'index'}}<img class="logo" src="images/BM_Logo_Sara.png" />{{/link-to}}</h1>
+                    <h1>{{#link-to 'recipes.index'}}<img class="logo" src="images/BM_Logo_Sara.png" />{{/link-to}}</h1>
                     <ul>
                         <li>{{#link-to 'recipes.create'}}<span class="fa fa-plus"></span>{{/link-to}}</li>
                         <li>{{#link-to 'settings'}}<span class="fa fa-cog"></span>{{/link-to}}</li>
@@ -57,11 +57,13 @@
             <section class  ="image-row">
                 <h2 class="small-food-header">My Recipes</h2>
                 <hr class="small-food-line">
+                {{#link-to 'recipes.detail'}}
                 <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-8.jpg"/>
                 <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-5.jpg"/>
                 <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-6.jpg"/>
                 <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-3.jpg"/>
                 <img class ="small-food" src="http://lorempixel.com/output/food-q-c-150-150-1.jpg"/>
+                {{/link-to}}
             </section>
             <section class  ="image-row">
                 <h2 class="small-food-header">Public Recipes</h2>
@@ -169,13 +171,40 @@
             <input type="submit" name="Submit" />
         </script>
 
-        <script type="text/x-handlebars"
+        <script type='text/x-handlebars' data-template-name='recipes/detail'>
+            <div class="detail-wrapper">
+                <h2>{{title}}</h2>
+                <h3>{{author}}</h3>
+                <img {{bind-attr src=image}}>
+            </div>
+            <ul>
+                <li>
+                    <span>Recipe Type</span> 
+                    {{type}}
+                </li>
+                <li>
+                    <span>Prep Time</span> 
+                    {{prepTime}}
+                </li>
+                <li>
+                    <span>Cook Time</span> 
+                    {{cookTime}}
+                </li>
+                <li>
+                    <span>Cook Temp</span> 
+                    {{cookTemp}}
+                </li>
+            </ul>
+
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/handlebars/handlebars.js"></script>
         <script src="bower_components/ember/ember.js"></script>
+        <script src="bower_components/ember-data/ember-data.js"></script>
+
         <!-- endbower -->
         <!-- endbuild -->
 

@@ -12,6 +12,7 @@ window.App = Ember.Application.create();
 		image: DS.attr('string'),
 		//comeback to the URL thing that Jess was telling you about
 		title: DS.attr('string'),
+		id: DS.attr('number'),
 		author: DS.attr('string'),
 		type: DS.attr('string'),
 		prepTime: DS.attr('number'),
