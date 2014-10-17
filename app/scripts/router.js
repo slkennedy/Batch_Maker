@@ -18,23 +18,26 @@ App.Router.map (function(){
 	// this.route('pantry');
 });
 
+App.ApplicationRoute = Ember.Route.extend({
+	model: function() {
+		return this.store.find('user', 'user_sara');
+	}
+})
+
 App.UserRoute = Ember.Route.extend ({
 	model: function (){
-		return {username: 'Sara K'};
+		return this.store.find('recipe');
 	}
 });
 
 App.RecipesDetailRoute = Ember.Route.extend ({
 	model: function (){
-		return {
-			title: 'Recipe Title',
-			id:1,
-			author: 'Some Person',
-			image: 'http://lorempixel.com/output/food-q-c-800-300-9.jpg',
-			type: 'Dessert',
-			prepTime: 15,
-			cookTime: 20,
-			cookTemp: 350
-		};
+		return this.store.find('recipe');
+	}
+});
+
+App.RecipesCreateRoute = Ember.Route.extend ({
+	model: function () {
+		return this.store.find('recipe');
 	}
 });
