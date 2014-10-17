@@ -18,7 +18,7 @@ App.RecipesCreateController = Ember.Controller.extend ({
 			newRecipe.save();
 			user.get('recipes').addObject(newRecipe);
 			user.save();
-			form.empty();
+			this.setProperties({title: ''});
 		},
 	},
 });
