@@ -12,7 +12,12 @@ App.RecipesCreateController = Ember.Controller.extend ({
 			var user = this.get('controllers.application.currentUser');
 			var newRecipe = this.store.createRecord ('recipe',{
 				title: this.get('title'),
-				author: user
+				author: user,
+				type: this.get(''),
+				prepTime: this.get('prepTime'),
+				cookTime: this.get('cookTime'),
+				cookTemp: this.get('cookTemp'),
+				personalNote: this.get('personalNote')
 			});
 
 			newRecipe.save();
