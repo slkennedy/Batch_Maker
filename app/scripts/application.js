@@ -1,36 +1,37 @@
 window.App = Ember.Application.create();
 
+App.ref = new Firebase('https://batchmade.firebaseio.com/');
+
 App.ApplicationAdapter = DS.FirebaseAdapter.extend ({
-	firebase: new Firebase ('https://batchmade.firebaseio.com/')
+	firebase: App.ref
 });
 
+App.User = DS.Model.extend ({
+	email: DS.attr('string'),
+	recipes: DS.hasMany('recipe'),
+	password: DS.attr('string')
+});
 
-	App.User = DS.Model.extend ({
-		username: DS.attr('string'),
-		firstName: DS.attr('string'),
-		lastName: DS.attr('string'),
-		recipes: DS.hasMany('recipe'),
-		password: DS.attr('string'),
-	});
+App.Recipe = DS.Model.extend ({
+	title: DS.attr('string'),
+	author: DS.belongsTo('user'),
+	type: DS.attr('string'),
+	prepTime: DS.attr('number'),
+	cookTime: DS.attr('number'),
+	cookTemp: DS.attr('number'),
+	tempType: DS.attr('string'),
+	yieldAmount: DS.attr ('number'),
+	yieldType: DS.attr('string'),
+	measurement: DS.attr('number'),
+	measurementType: DS.attr('string'),
+	personalNote: DS.attr('string')
+});
 
-	App.Recipe = DS.Model.extend ({
-		//image: DS.attr('string'),
-		//comeback to the URL thing that Jess was telling you about
-		title: DS.attr('string'),
-		author: DS.belongsTo('user'),
-		type: DS.attr('string'),
-		prepTime: DS.attr('number'),
-		cookTime: DS.attr('number'),
-		cookTemp: DS.attr('number'),
-		ingredients: DS.hasMany('ingredient'),
-		personalNote: DS.attr('string')
-	});
-
-	App.Ingredient = DS.Model.extend ({
-		amount: DS.attr('number'),
-		measurement: DS.attr('string'),
-		item: DS.attr('string')
-	});
+App.Ingredient = DS.Model.extend ({
+	amount: DS.attr('number'),
+	measurement: DS.attr('string'),
+	item: DS.attr('string')
+});
 
 // 	var newUser = this.store.createUser ('user', {
 // 		username: 'SaraK',

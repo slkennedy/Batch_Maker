@@ -20,9 +20,15 @@ App.Router.map (function(){
 
 App.ApplicationRoute = Ember.Route.extend({
 	model: function() {
-		return this.store.find('user', 'user_sara');
+		return this.store.find('user');
 	}
-})
+});
+
+App.LoginRoute = Ember.Route.extend ({
+	model: function (){
+		return this.store.find('user');
+	}
+});
 
 App.UserRoute = Ember.Route.extend ({
 	model: function (){
