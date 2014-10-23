@@ -54,7 +54,12 @@ App.LoginController = Ember.Controller.extend ({
 	actions: {
 		login: function (){
 			var credentials = this.getProperties('email', 'password');
-      		this.get('controllers.session').authenticate(credentials);
+			var self = this;
+      		this.get('controllers.session').authenticate(credentials).then(function(authData){
+      			self.store.find('user', authData.uid).then(function(user) {
+                    self.set('controllers.session.currentUser', user);
+                });
+      		});
       		this.transitionToRoute('recipes');
 
 		}
@@ -70,24 +75,24 @@ App.SignupController = Ember.Controller.extend({
 	      var self = this;
 	      
 	      App.ref.createUser(credentials, function(error){
-	        	     console.log(credentials);
-
 	        if( !error ){
 	        	console.log('dumb');
 	          	self.get('controllers.session').authenticate(credentials).then(function(authData){
-	          	console.log('butthead');
-                    var users = self.store.createRecord('user', {
-	                        id: authData.uid,
-	                        email: credentials.email
-	                    });
-	                    console.log('cool')
-	                    users.save();
+	          		console.log('butthead');
+                    var user = self.store.createRecord('user', {
+                        id: authData.uid,
+                        email: credentials.email
+                    });
+                    console.log('cool')
+                    user.save().then(function(){
+                    	self.set('controllers.session.currentUser', user);
+                    });
 
-	            self.setProperties ({
-					email: '',
-					password: ''
-				});
-	          });
+		            self.setProperties ({
+						email: '',
+						password: ''
+					});
+		        });
 	        } else{
 	        	console.log(error);
 	        }
@@ -98,30 +103,31 @@ App.SignupController = Ember.Controller.extend({
 
 App.SessionController = Ember.Controller.extend({
     currentUser: null,
+
+    updateLocalStorage: function(){
+    	localStorage.setItem('currentUser', this.get('currentUser.id'));
+    }.observes('currentUser'),
+
     authenticate: function(credentials) {
         console.log(credentials);
         var self = this;
         return new Ember.RSVP.Promise(function(resolve, reject) {
             App.ref.authWithPassword(credentials, function(error, authData) {
             	if (authData){
-            		console.log("User",authData);
+            		// console.log("User",authData);
 	                // if (!self.store.find('user', authData.uid)) {
-	                    var users = self.store.createRecord('user', {
-	                        id: authData.uid,
-	                        email: credentials.email
-	                    });
-	                    console.log('cool')
-	                    users.save();
+	                    // var users = self.store.createRecord('user', {
+	                    //     id: authData.uid,
+	                    //     email: credentials.email
+	                    // });
+	                    // console.log('cool')
+	                    // users.save();
 	                // } else {
-	                    self.store.find('user', authData.uid).then(function(user) {
-	                        self.set('currentUser', user);
-	               			localStorage.setItem('currentUser', authData.uid);
-	                    });
+                    resolve(authData);
 	                // }
-	                resolve(authData);
-            	}
-            	else {
+            	} else {
             		console.log(error);
+            		reject(error);
             	}
             })
         })
