@@ -1,8 +1,6 @@
-<h1 class='signup'>Create an Account</h1>
-<form>
-    {{input type='text' value=username placeholder='Username'}}
+<h1 class='signup small-food-header'>Create an Account</h1>
+<form class='forms'>
+    {{input type='email' value=email placeholder='Email'}}
     {{input type='password' value=password placeholder='Password'}}
-    {{input type='text' value=firstName placeholder='First Name'}}
-    {{input type='text' value=lastName placeholder='Last Name'}}
-    {{input type='submit' value='Create Account'}}
+    <button {{action 'createUser'}}>Create Account</button>
 </form>

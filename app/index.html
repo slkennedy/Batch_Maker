@@ -28,11 +28,9 @@
         <script type='text/x-handlebars'>
             <header class='header'>
                 <div class='head-wrapper'>
-                    <span>The kitchen is yours, chef!</span>
                     <h1>{{#link-to 'recipes.index'}}<img class='logo' src='images/BM_Logo_Sara.png' />{{/link-to}}</h1>
                     <ul>
                         <li>{{#link-to 'recipes.create'}}<span class='fa fa-plus'></span>{{/link-to}}</li>
-                        <li>{{#link-to 'settings'}}<span class='fa fa-cog'></span>{{/link-to}}</li>
                         <li>{{#link-to 'login'}}<span class='fa fa-user'></span>{{/link-to}}</li>
                     </ul>
                 </div>
@@ -41,10 +39,7 @@
                 <aside class='sidebar'>
                     <ul class='menu-list'>
                         <li>{{#link-to 'recipes.index'}}My Recipes{{/link-to}}</li>
-                        <li>Public Recipes</li>
-                        <li>Popular Recipes</li> 
-                        <li>My Favorite Recipes</li>
-                        <li>My Pantry</li>
+                        <li>{{#link-to 'recipes.create'}}Add Recipe{{/link-to}}</li>
                     </ul>
                 </aside>
                 <section class='content'>
