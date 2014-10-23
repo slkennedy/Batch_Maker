@@ -1,7 +1,7 @@
-<h1 class='login'>Login</h1>
-<form>
-    {{input type='email' value=email placeholder='email'}}
+<h1 class='login small-food-header'>Login</h1>
+<form class='forms'>
+    {{input type='email' value=email placeholder='Email'}}
     {{input type='password' value=password placeholder='Password'}}
     <button {{action 'login'}}>Login</button>
-    {{#link-to 'signup'}}<h3>Create an Account</h3>{{/link-to}}
+    {{#link-to 'signup'}}Create An Account{{/link-to}}
 </form>    

@@ -1,28 +1,22 @@
 App.Router.map (function(){
-	this.route('user' /*,{path:':user_name'}*/);
 
-	//make a user template
-	//make UserRoute
-	//hook model to UserRoute
+	this.route('user' /*,{path:':user_name'}*/);
 
 	this.resource('recipes', function(){
 		this.route('create');
 	 	this.route('detail'/*,{path: ':recipe_id'}*/);
-	// 	this.route('edit', {path: ':recipe_id/edit'});
 	});
 
-	this.route('login');
+	this.route('login', {path:''});
 	this.route('signup');
 
-	this.route('settings');
-	// this.route('pantry');
 });
 
-App.ApplicationRoute = Ember.Route.extend({
-	model: function() {
-		return this.store.find('user');
-	}
-});
+// App.ApplicationRoute = Ember.Route.extend({
+// 	model: function() {
+// 		return this.store.find('user', 'simplelogin:11');
+// 	}
+// });
 
 App.LoginRoute = Ember.Route.extend ({
 	model: function (){

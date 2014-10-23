@@ -1,31 +1,29 @@
 
-<h2>Basic Info</h2>
-<form class='createRecipe'>
-    <img src= 'http://lorempixel.com/output/food-q-c-150-150-10.jpg' />
-
+<h2 class='small-food-header'>Create Recipe</h2>
+<form class='forms'>
     {{input type='text' value=title placeholder='Recipe Name'}}
-{{!--     {{view Ember.Select content=recipeType prompt='Recipe Type' value=selectedRecipeType}}
+    {{view Ember.Select content=recipeType prompt='Choose Recipe Type' value=selectedRecipeType class='dropdown'}}
     {{input type='text' value=prepTime placeholder='Prep Time'}}
     {{input type='text' value=cookTime placeholder='Cook Time'}}    
     {{input type='text' value=cookTemp placeholder='Cook Temp'}}
-    {{view Ember.Select content=tempType value=selectedTempType}}
+    {{view Ember.Select content=tempType value=selectedTempType prompt='Choose Temperature Type' class='dropdown'}}
 
-    <span>This recipe will make</span>
+    <span class='texts'>This recipe will make:</span>
     {{input type='text' value=yieldAmount placeholder='Amount'}}
     {{input type='text' value=yieldType placeholder='cookies, loaves, etc'}} 
 
-    <h2>Step 1</h2>
+    <h2 class='texts'>Step 1</h2>
 
     {{input type='text' value=measurement placeholder='Amount'}}
-    {{view Ember.Select content=measurementType prompt='Unit' value='selectedMeasurementType'}}
+    {{view Ember.Select content=measurementType prompt='Choose Measurement Unit' value='selectedMeasurementType' class='dropdown'}}
 
     {{input type='text' value=ingredient placeholder='Ingredient'}}
     {{textarea value=step_directions placeholder='What directions go with this step?'}}
 
     <button {{action 'addStep'}}>Add another step</button>
 
-    <h2>Personal Notes</h2>
-    {{textarea value=personalNote placeholder='Personal Notes'}} --}}
+    <h2 class='texts'>Personal Notes</h2>
+    {{textarea value=personalNote placeholder='Personal Notes'}}
  
     <button {{action 'createRecipe'}}>SuperCool</button>
 </form>
